@@ -21,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
                     HomeFragment home = new HomeFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragmentContainer, home).commit();
                     return true;
+                case R.id.navigation_team:
+                    TeamFragment team = new TeamFragment();
+                    fragmentManager.beginTransaction().replace(R.id.fragmentContainer, team).commit();
+                    return true;
                 case R.id.navigation_parameters:
                     ParametersFragment parameters = new ParametersFragment();
                     fragmentManager.beginTransaction().replace(R.id.fragmentContainer, parameters).commit();

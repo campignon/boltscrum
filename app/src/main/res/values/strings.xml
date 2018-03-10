@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bolt Scrum</string>
     <string name="title_home">Home</string>
+    <string name="title_team">Team</string>
     <string name="title_parameters">Parameters</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -9,4 +10,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="parameters_fragment_message">Welcome on the Parameters Page !</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="team_fragment_message">Welcome on the Team Page !</string>
 </resources>

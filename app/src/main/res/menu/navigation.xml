@@ -7,6 +7,11 @@
         android:title="@string/title_home" />
 
     <item
+        android:id="@+id/navigation_team"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="@string/title_team" />
+
+    <item
         android:id="@+id/navigation_parameters"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="@string/title_parameters" />
