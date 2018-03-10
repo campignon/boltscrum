@@ -12,13 +12,14 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/addMemberButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Button" />
+            android:text="@string/team_add_member_button" />
 
         <ListView
+            android:id="@+id/membersList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

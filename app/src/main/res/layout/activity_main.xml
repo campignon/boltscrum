@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.hexatech.boltscrum.MainActivity">
 
-    <FrameLayout
-        android:layout_width="368dp"
-        android:layout_height="439dp"
-        android:id="@+id/fragmentContainer"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="0dp"

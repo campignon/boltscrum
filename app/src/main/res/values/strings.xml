@@ -9,8 +9,9 @@
     <string name="home_lottery_button">Lottery</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="parameters_fragment_message">Welcome on the Parameters Page !</string>
+    <string name="team_add_member_button">Add new member</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="team_fragment_message">Welcome on the Team Page !</string>
+    <string name="parameters_fragment_message">Welcome on the Parameters Page !</string>
+
 </resources>
