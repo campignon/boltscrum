@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     return handleNavigationHomeItemSelected();
+                case R.id.navigation_lottery:
+                    return handleNavigationLotteryItemSelected();
                 case R.id.navigation_team:
                     return handleNavigationTeamItemSelected();
                 case R.id.navigation_parameters:
@@ -40,11 +42,17 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private boolean handleNavigationHomeItemSelected() {
+        HomeFragment home = new HomeFragment();
+        fragmentManager.beginTransaction().replace(R.id.container, home).commit();
+        return true;
+    }
+
+    private boolean handleNavigationLotteryItemSelected() {
         Bundle bundle = new Bundle();
         bundle.putStringArray("members", members);
-        HomeFragment home = new HomeFragment();
-        home.setArguments(bundle);
-        fragmentManager.beginTransaction().replace(R.id.container, home).commit();
+        LotteryFragment lottery = new LotteryFragment();
+        lottery.setArguments(bundle);
+        fragmentManager.beginTransaction().replace(R.id.container, lottery).commit();
         return true;
     }
 

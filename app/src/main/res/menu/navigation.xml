@@ -7,6 +7,11 @@
         android:title="@string/title_home" />
 
     <item
+        android:id="@+id/navigation_lottery"
+        android:icon="@drawable/ic_shuffle_black_24dp"
+        android:title="@string/title_lottery" />
+
+    <item
         android:id="@+id/navigation_team"
         android:icon="@drawable/ic_group_black_24dp"
         android:title="@string/title_team" />

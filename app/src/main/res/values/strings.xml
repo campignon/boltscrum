@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">Bolt Scrum</string>
     <string name="title_home">Home</string>
+    <string name="title_lottery">Lottery</string>
     <string name="title_team">Team</string>
     <string name="title_parameters">Parameters</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="home_lottery_message">Click the <b>LOTTERY</b> button to select a random first participant !</string>
-    <string name="home_lottery_button">Lottery</string>
+    <string name="home_message">Click the <b>START MEETING</b> button to start the meeting !</string>
     <string name="home_start_meeting_button">Start Meeting</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="lottery_message">Click the <b>LOTTERY</b> button to select a random first participant !</string>
+    <string name="lottery_button">Lottery</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="team_add_member_button">Add new member</string>
