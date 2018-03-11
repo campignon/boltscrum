@@ -19,7 +19,6 @@ public class MeetingActivity extends AppCompatActivity {
     private Chronometer totalChronometer;
 
     private int participantNumber;
-    private List<Long> timesList;
 
     private View.OnClickListener mOnNextParticipantButtonClickedListener = new View.OnClickListener() {
         @Override
@@ -32,27 +31,15 @@ public class MeetingActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             long totalMeetingTime = SystemClock.elapsedRealtime() - totalChronometer.getBase();
-            long[] timesArray = getTimesAsLongArray();
 
             Intent intent = new Intent(view.getContext(), MeetingReportActivity.class);
             Bundle meetingDataBundle = new Bundle();
             meetingDataBundle.putInt("participantsNumber", participantNumber);
             meetingDataBundle.putLong("totalTime", totalMeetingTime);
-            meetingDataBundle.putLongArray("timesArray", timesArray);
             intent.putExtra("meetingData", meetingDataBundle);
             startActivity(intent);
         }
     };
-
-    private long[] getTimesAsLongArray() {
-        long[] timesArray = new long[this.timesList.size()];
-        int index = 0;
-        for (Long time : this.timesList) {
-            timesArray[index] = time;
-            index++;
-        }
-        return timesArray;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +49,6 @@ public class MeetingActivity extends AppCompatActivity {
         this.participantNumberTextView = findViewById(R.id.participantNumberTextView);
 
         this.participantNumber = 0;
-
-        this.timesList = new ArrayList<>();
 
         this.mainChronometer = findViewById(R.id.mainChronometer);
         this.totalChronometer = findViewById(R.id.totalChronometer);
@@ -79,13 +64,6 @@ public class MeetingActivity extends AppCompatActivity {
     }
 
     private void nextParticipant() {
-        // If this is not the starting call
-        if (this.participantNumber > 0) {
-            // We get the time from the chronometer
-            long elapsedMillis = SystemClock.elapsedRealtime() - this.mainChronometer.getBase();
-            // We add the time to the times list
-            this.timesList.add(elapsedMillis);
-        }
         // We reset the main chronometer
         this.mainChronometer.setBase(SystemClock.elapsedRealtime());
         this.mainChronometer.start();
