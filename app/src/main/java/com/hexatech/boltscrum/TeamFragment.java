@@ -25,9 +25,9 @@ public class TeamFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_team, container, false);
 
-        String[] members = new String[] { "Camille PIGNON", "Benjamin LECLERC" };
         ListView listView = view.findViewById(R.id.membersList);
 
+        String[] members = getArguments().getStringArray("members");
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
