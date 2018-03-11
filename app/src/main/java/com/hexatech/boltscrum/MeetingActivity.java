@@ -19,6 +19,8 @@ public class MeetingActivity extends AppCompatActivity {
     private Chronometer totalChronometer;
 
     private int participantNumber;
+    private boolean isFinished;
+    private long totalMeetingTime;
 
     private View.OnClickListener mOnNextParticipantButtonClickedListener = new View.OnClickListener() {
         @Override
@@ -30,7 +32,12 @@ public class MeetingActivity extends AppCompatActivity {
     private View.OnClickListener mOnEndMeetingButtonClickedListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            long totalMeetingTime = SystemClock.elapsedRealtime() - totalChronometer.getBase();
+            if (!isFinished) {
+                mainChronometer.stop();
+                totalChronometer.stop();
+                totalMeetingTime = SystemClock.elapsedRealtime() - totalChronometer.getBase();
+                isFinished = true;
+            }
 
             Intent intent = new Intent(view.getContext(), MeetingReportActivity.class);
             Bundle meetingDataBundle = new Bundle();
@@ -49,6 +56,8 @@ public class MeetingActivity extends AppCompatActivity {
         this.participantNumberTextView = findViewById(R.id.participantNumberTextView);
 
         this.participantNumber = 0;
+        this.isFinished = false;
+        this.totalMeetingTime = 0;
 
         this.mainChronometer = findViewById(R.id.mainChronometer);
         this.totalChronometer = findViewById(R.id.totalChronometer);
