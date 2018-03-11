@@ -22,7 +22,7 @@
     <!-- Strings for the Meeting activity -->
     <string name="meeting_next_participant_button">Next</string>
     <string name="meeting_end_meeting_button">Finish</string>
-    <string name="meeting_total_time_label">Total time : </string>
+    <string name="meeting_total_time_label">Total time :</string>
     <string name="meeting_participant_number_label">Participant n°</string>
 
 </resources>

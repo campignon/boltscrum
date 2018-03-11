@@ -66,12 +66,18 @@
                 android:text="@string/meeting_total_time_label"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/totalTimeTextView"
+            <Space
+                android:layout_width="5dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Chronometer
+                android:id="@+id/totalChronometer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="18sp" />
+
         </LinearLayout>
     </LinearLayout>
 

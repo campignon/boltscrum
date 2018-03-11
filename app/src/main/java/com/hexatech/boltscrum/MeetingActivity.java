@@ -15,6 +15,7 @@ public class MeetingActivity extends AppCompatActivity {
 
     private TextView participantNumberTextView;
     private Chronometer mainChronometer;
+    private Chronometer totalChronometer;
 
     private int participantNumber;
     private List<Long> timesList;
@@ -38,20 +39,29 @@ public class MeetingActivity extends AppCompatActivity {
         this.timesList = new ArrayList<>();
 
         this.mainChronometer = findViewById(R.id.mainChronometer);
+        this.totalChronometer = findViewById(R.id.totalChronometer);
 
         Button nextParticipantButton = findViewById(R.id.nextParticipantButton);
         nextParticipantButton.setOnClickListener(this.mOnNextParticipantButtonClickedListener);
 
         nextParticipant();
+        this.totalChronometer.start();
     }
 
     private void nextParticipant() {
+        // If this is not the starting call
+        if (this.participantNumber > 0) {
+            // We get the time from the chronometer
+            long elapsedMillis = SystemClock.elapsedRealtime() - this.mainChronometer.getBase();
+            // We add the time to the times list
+            this.timesList.add(elapsedMillis);
+        }
+        // We reset the main chronometer
+        this.mainChronometer.setBase(SystemClock.elapsedRealtime());
+        this.mainChronometer.start();
         // We increase the participant number
         this.participantNumber++;
         // We change the participant number in the text view
         this.participantNumberTextView.setText(String.valueOf(participantNumber));
-        // We reset the main chronometer
-        this.mainChronometer.setBase(SystemClock.elapsedRealtime());
-        this.mainChronometer.start();
     }
 }
