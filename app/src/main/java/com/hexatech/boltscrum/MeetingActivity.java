@@ -1,5 +1,6 @@
 package com.hexatech.boltscrum;
 
+import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,32 @@ public class MeetingActivity extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener mOnEndMeetingButtonClickedListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            long totalMeetingTime = SystemClock.elapsedRealtime() - totalChronometer.getBase();
+            long[] timesArray = getTimesAsLongArray();
+
+            Intent intent = new Intent(view.getContext(), MeetingReportActivity.class);
+            Bundle meetingDataBundle = new Bundle();
+            meetingDataBundle.putInt("participantsNumber", participantNumber);
+            meetingDataBundle.putLong("totalTime", totalMeetingTime);
+            meetingDataBundle.putLongArray("timesArray", timesArray);
+            intent.putExtra("meetingData", meetingDataBundle);
+            startActivity(intent);
+        }
+    };
+
+    private long[] getTimesAsLongArray() {
+        long[] timesArray = new long[this.timesList.size()];
+        int index = 0;
+        for (Long time : this.timesList) {
+            timesArray[index] = time;
+            index++;
+        }
+        return timesArray;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +70,9 @@ public class MeetingActivity extends AppCompatActivity {
 
         Button nextParticipantButton = findViewById(R.id.nextParticipantButton);
         nextParticipantButton.setOnClickListener(this.mOnNextParticipantButtonClickedListener);
+
+        Button endMeetingButton = findViewById(R.id.endMeetingButton);
+        endMeetingButton.setOnClickListener(this.mOnEndMeetingButtonClickedListener);
 
         nextParticipant();
         this.totalChronometer.start();

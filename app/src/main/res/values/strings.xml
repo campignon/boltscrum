@@ -25,4 +25,11 @@
     <string name="meeting_total_time_label">Total time :</string>
     <string name="meeting_participant_number_label">Participant n°</string>
 
+    <!-- Strings for the Meeting report activity -->
+    <string name="meeting_report_title">Meeting report</string>
+    <string name="meeting_report_back_to_home_button">Back to home</string>
+    <string name="meeting_report_participants_number_label">Number of participants</string>
+    <string name="meeting_report_total_time_label">Total meeting time</string>
+    <string name="meeting_report_average_time_label">Average time per participant</string>
+
 </resources>
