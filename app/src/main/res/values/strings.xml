@@ -16,6 +16,10 @@
     <!-- Strings for the Team fragment -->
     <string name="team_add_member_button">Add new member</string>
 
+    <!--  -->
+    <string name="add_member_dialog_add_placeholder">Enter the member\'s full name</string>
+    <string name="add_member_dialog_add_button">Add</string>
+
     <!-- Strings for the Parameters fragment -->
     <string name="parameters_fragment_message">Welcome on the Parameters Page !</string>
 
